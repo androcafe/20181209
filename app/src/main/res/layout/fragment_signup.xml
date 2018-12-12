@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:id="@+id/layout_sign_in">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:background="@raw/background">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end">
+
+                <ImageButton
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#00000000"
+                    android:src="@raw/close" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageview_hospital"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@raw/foodlogo" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sign_in_bg"
+            android:elevation="10dp"
+            android:padding="20dp"
+            android:id="@+id/layout_sign_up2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/login_edt_bg"
+                    android:textColor="@android:color/black"
+                    android:padding="10dp"
+                    android:textColorHint="#797676"
+                    android:hint="@string/string_name"
+                    android:nextFocusDown="@id/edt_surname"
+                    android:singleLine="true"
+                    android:id="@+id/edt_name"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/login_edt_bg"
+                    android:textColor="@android:color/black"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColorHint="#797676"
+                    android:hint="@string/string_surname"
+                    android:nextFocusDown="@id/edt_phoneno"
+                    android:singleLine="true"
+                    android:id="@+id/edt_surname"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_edt_bg"
+                android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:drawableLeft="@raw/cellphone"
+                android:drawablePadding="10dp"
+                android:textColorHint="#797676"
+                android:hint="@string/string_phone"
+                android:maxLength="10"
+                android:inputType="number"
+                android:windowSoftInputMode="adjustResize"
+                android:nextFocusDown="@id/edt_password"
+                android:singleLine="true"
+                android:id="@+id/edt_phoneno"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_edt_bg"
+                android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:drawableLeft="@raw/lock"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColorHint="#797676"
+                android:hint="@string/string_password"
+                android:nextFocusDown="@id/btn_sign_in"
+                android:id="@+id/edt_password"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+
+                    android:textColor="@android:color/black"
+                    android:padding="10dp"
+                    android:text="@string/string_location"
+                    android:singleLine="true"
+                    android:id="@+id/tv_loc"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/spinner_loc"></Spinner>
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/login_btn_bg"
+                android:text="@string/string_sign_up"
+                android:elevation="10dp"
+                android:id="@+id/btn_sign_up"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

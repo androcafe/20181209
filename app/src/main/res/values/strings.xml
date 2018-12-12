@@ -1,0 +1,79 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Lunch Home</string>
+
+    <!--Select Language-->
+    <array name="language">
+        <item>English</item>
+        <item>मराठी</item>
+    </array>
+
+    <!--Fragment Sign In-->
+    <string name="string_login">LOGIN</string>
+    <string name="string_phone">Phone No</string>
+    <string name="string_password">Password</string>
+    <string name="string_sign_in">Sign In</string>
+    <string name="string_forgot_pw">Forgot your password?</string>
+    <string name="string_new_acc">Don\'t have an account?</string>
+    <string name="string_create_now">Create Now</string>
+
+    <!--Fragment Sign Up-->
+    <string name="string_register">REGISTER</string>
+    <string name="string_name">Name</string>
+    <string name="string_surname">Surname</string>
+    <string name="string_location">Location</string>
+    <string name="string_sign_up">Sign Up</string>
+
+    <!--Fragment Forgot Password-->
+    <string name="string_submit">Submit</string>
+    <string name="string_forgot_pass">Forgot Password</string>
+
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open" tools:ignore="MissingTranslation">Open navigation drawer</string>
+    <string name="navigation_drawer_close" tools:ignore="MissingTranslation">Close navigation drawer</string>
+    <string name="nav_header_title" tools:ignore="MissingTranslation">Android Studio</string>
+    <string name="nav_header_subtitle" tools:ignore="MissingTranslation">android.studio@android.com</string>
+    <string name="nav_header_desc" tools:ignore="MissingTranslation">Navigation header</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_past_order">Past Order</string>
+    <string name="nav_track_order">Track Order</string>
+    <string name="nav_share">Share</string>
+    <string name="nave_rate_us">Rate Us</string>
+    <string name="nav_help_support">Help &amp; Support</string>
+
+    <string name="action_settings" tools:ignore="MissingTranslation">Settings</string>
+
+    <!-- Home Activity -->
+    <string name="home_title">Swaraj Lunch Home</string>
+    <string name="title_cart">CART</string>
+
+    <string name="string_starter">Starter</string>
+    <string name="string_main_course">Main Course</string>
+    <string name="string_roti_rice">Roti Rice</string>
+    <string name="string_cold_drink">Cold Drink</string>
+
+    <!--Order Fragment -->
+    <string name="string_order">Order</string>
+    <string name="string_order_no">Order No</string>
+    <string name="string_date">Date</string>
+    <string name="string_price">Price</string>
+
+    <string name="string_placed">Order Placed</string>
+    <string name="string_enroute">On the way</string>
+    <string name="string_delivered">Delivered</string>
+
+    <string name="string_order_msg">YOUR ORDER WILL BE DELIVERED SOON</string>
+
+    <string name="string_order_at">Ordered at</string>
+
+    <!--Menu List-->
+    <string name="string_add">ADD</string>
+    <string name="string_add_sign">+</string>
+    <string name="string_sub_sign">-</string>
+
+    <!--Categories-->
+    <string name="string_veg">Veg</string>
+    <string name="string_non_veg">Non Veg</string>
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Fragment Sign In-->
+    <string name="string_login">लॉगिन</string>
+    <string name="string_phone">ूरध्वनी क्रमांक</string>
+    <string name="string_password">पासवर्ड</string>
+    <string name="string_sign_in">साइन इन</string>
+    <string name="string_forgot_pw">तुमचा पासवर्ड विसरलात?</string>
+    <string name="string_new_acc">खाते नाही?</string>
+    <string name="string_create_now">आता तयार करा</string>
+
+
+    <!--Fragment Sign Up-->
+    <string name="string_register">नोंदणी</string>
+    <string name="string_name">नाव</string>
+    <string name="string_surname">आडनाव</string>
+    <string name="string_location">स्थान</string>
+    <string name="string_sign_up">साइन अप करा</string>
+
+    <!--Fragment Forgot Password-->
+    <string name="string_submit">सबमिट करा</string>
+    <string name="string_forgot_pass">पासवर्ड विसरला</string>
+
+    <!--Home Activity-->
+    <string name="home_title">स्वराज लंच होम</string>
+    <string name="title_cart">कार्ट</string>
+
+    <string name="string_starter">स्टार्टर</string>
+    <string name="string_main_course">स्टार्टर</string>
+    <string name="string_roti_rice">स्टार्टर</string>
+    <string name="string_cold_drink">थंड पेय</string>थंड पेय
+
+    <!-- Navigation Drawer -->
+    <string name="nav_home">मुख्य पान</string>
+    <string name="nav_profile">प्रोफाइल</string>
+    <string name="nav_past_order">मागील ऑर्डर</string>
+    <string name="nav_track_order">ट्रॅक ऑर्डर</string>
+    <string name="nav_share">शेअर करा</string>
+    <string name="nave_rate_us">रेट करा</string>
+    <string name="nav_help_support">मदत आणि पाठिंबा</string>
+
+    <!--Order Fragment -->
+    <string name="string_order">ऑर्डर</string>
+    <string name="string_order_no">ऑर्डर क्रमांक</string>
+    <string name="string_date">तारीख</string>
+    <string name="string_price">किंमत</string>
+
+    <string name="string_placed">ऑर्डर दिली</string>
+    <string name="string_enroute">मार्गावर</string>
+    <string name="string_delivered">वितरित</string>
+
+    <string name="string_order_msg">आपला ऑर्डर लवकरच वितरित केला जाईल</string>
+
+    <string name="string_order_at">तारीख</string>
+
+    <!--Menu List-->
+    <string name="string_add">ADD</string>
+    <string name="string_add_sign">+</string>
+    <string name="string_sub_sign">-</string>
+
+
+    <!--Categories-->
+    <string name="string_veg">शाकाहारी</string>
+    <string name="string_non_veg">मांसाहारी</string>
+</resources>
