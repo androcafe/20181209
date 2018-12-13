@@ -68,6 +68,7 @@
     <string name="string_non_veg">मांसाहारी</string>
 
     <!--Admin order take-->
+    <string name="string_id">Id</string>
     <string name="string_address">पत्ता</string>
     <string name="string_confirm">ऑर्डर स्वीकारले</string>
     <string name="string_cancel_order">ऑर्डर रद्द </string>
@@ -76,8 +77,14 @@
 
     <string name="string_admin_take_order">Take Order Panel</string>
 
-
     <string name="tab_new_order">नवीन ऑर्डर</string>
     <string name="tab_cancel_order">रद्द ऑर्डर</string>
     <string name="tab_past_order">मागील ऑर्डर</string>
+
+    <!-- Cart-->
+    <string name="string_ur_delivery_details">ुमचे ऑर्डर स्टेटस</string>
+
+    <string name="string_subtotal">किंमत</string>
+    <string name="string_grand_total">एकूण किंमत</string>
+
 </resources>

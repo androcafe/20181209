@@ -46,7 +46,8 @@
             android:name=".categories.MainMenuActivity"
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait" />
-        <activity android:name=".admin.AdminOrderActivity"></activity>
+        <activity android:name=".admin.AdminOrderActivity" />
+        <activity android:name=".cart.ViewCartActivity"></activity>
     </application>
 
 </manifest>

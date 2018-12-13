@@ -32,16 +32,34 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="17sp"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:padding="10dp"
-                            android:background="@android:color/white"
-                            android:id="@+id/tv_order_id"
-                            android:layout_weight="2"/>
+                            android:background="@color/colorWhite"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17sp"
+                                android:paddingLeft="10dp"
+                                android:text="@string/string_id"
+                                android:background="@android:color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:padding="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@android:color/white"
+                                android:id="@+id/tv_order_id" />
+
+                        </LinearLayout>
+
 
                         <TextView
                             android:layout_width="match_parent"
@@ -49,7 +67,7 @@
                             android:textSize="17sp"
                             android:textStyle="bold"
                             android:textColor="@android:color/black"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:background="@android:color/white"
                             android:id="@+id/tv_date"
                             android:gravity="right"
@@ -57,7 +75,6 @@
 
 
                     </LinearLayout>
-
 
 
                     <LinearLayout
@@ -76,20 +93,38 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:textSize="17sp"
-                                android:text="@string/string_name" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
                                 android:textSize="17sp"
+                                android:drawableLeft="@raw/user"
+                                android:drawablePadding="5dp"
+                                android:padding="5dp"
                                 android:textColor="@android:color/black"
                                 android:id="@+id/tv_name"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableLeft="@raw/cellphone"/>
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/colorLightBlue"
+                                    android:id="@+id/tv_phone"/>
+
+
+                            </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -99,20 +134,23 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:textSize="17sp"
-                                android:text="@string/string_address" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:textSize="17sp"
+                                android:drawablePadding="5dp"
+                                android:drawableLeft="@raw/addlocation"
                                 android:textColor="@android:color/black"
                                 android:id="@+id/tv_order_address"/>
 
                         </LinearLayout>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:padding="5dp"
+                        android:background="@color/colorWhite"
+                        android:text="Item Id"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -121,53 +159,109 @@
                         android:background="@color/colorWhite">
 
                         <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="17sp"
+                            android:text="@string/string_status"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorWhite"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorWhite"
+                                android:padding="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/black"
+                                    android:text="@string/string_confirm"/>
+
+                                <Switch
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/swich_confirm_order"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorWhite"
+                                android:padding="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/black"
+                                    android:text="@string/string_cancel_order"/>
+
+                                <Switch
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/swich_cancel_order"/>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorWhite"
+                                android:padding="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/black"
+                                    android:text="@string/string_delivered"/>
+
+                                <Switch
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/swich_delivered_order"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="1dp"
+                        android:gravity="end"
+                        android:background="@color/colorWhite">
+
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
                             android:layout_weight="1"
-                            android:padding="10dp"
-                            android:layout_gravity="right"
+                            android:padding="5dp"
+                            android:textColor="@color/colorGreen"
+                            android:layout_gravity="end"
                             android:id="@+id/tv_total"/>
                     </LinearLayout>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="#00000000">
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/btn_add"
-                        android:padding="10dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="1"
-                        android:text="@string/string_confirm"
-                        android:id="@+id/btn_confirm_order"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/btn_add"
-                        android:padding="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="1"
-                        android:text="@string/string_cancel_order"
-                        android:id="@+id/btn_cancel_order"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/btn_add"
-                        android:padding="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="1"
-                        android:text="@string/string_delivered"
-                        android:id="@+id/btn_delivered_order"/>
                 </LinearLayout>
             </LinearLayout>
 
