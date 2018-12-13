@@ -1,95 +1,67 @@
 package com.example.windows.fooddeliveryapp.categories;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import com.example.windows.fooddeliveryapp.R;
+import com.example.windows.fooddeliveryapp.home.HomeActivity;
 import com.example.windows.fooddeliveryapp.mainmenu.MainMenuNonVeg;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
-public class MainMenuActivity extends Fragment {
+public class MainMenuActivity extends AppCompatActivity {
 
-    Unbinder unbinder;
+    @BindView(R.id.frame_main_menu)
+    FrameLayout frameLayout;
 
-    @BindView(R.id.tabs)
-    TabLayout tabLayout;
-
-    @BindView(R.id.viewpager)
-    ViewPager viewPager;
-
-    Adapter adapter;
-
-    public static MainMenuActivity newInstance() {
-
-        Bundle args = new Bundle();
-
-        MainMenuActivity fragment = new MainMenuActivity();
-        fragment.setArguments(args);
-        return fragment;
-    }
+    Fragment fragment;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_main_course,null);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_menu);
 
-        // bind view using butter knife
-        unbinder = ButterKnife.bind(this, view);
+        getSupportActionBar().setTitle(getResources().getString(R.string.string_main_course));
 
-        setupViewPager(viewPager);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tabLayout.setupWithViewPager(viewPager);
-        return view;
+
+        fragment=MainMenuFragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_main_menu,fragment)
+                .commit();
+
     }
 
-    private void setupViewPager(ViewPager viewPager) {
-        adapter = new Adapter(getChildFragmentManager());
-                adapter.addFragment(new MainMenuNonVeg(), getResources().getString(R.string.string_veg));
-        adapter.addFragment(new MainMenuNonVeg(), getResources().getString(R.string.string_non_veg));
-        viewPager.setAdapter(adapter);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle item selection
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent=new Intent(MainMenuActivity.this,HomeActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return  false;
     }
 
-    static class Adapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragments = new ArrayList<>();
-        private final List<String> mFragmentTitles = new ArrayList<>();
-
-        public Adapter(android.support.v4.app.FragmentManager fm) {
-            super(fm);
-        }
-
-        public void addFragment(Fragment fragment, String title) {
-            mFragments.add(fragment);
-            mFragmentTitles.add(title);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragments.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragments.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitles.get(position);
-        }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(MainMenuActivity.this,HomeActivity.class);
+        finish();
+        startActivity(intent);
     }
 }
