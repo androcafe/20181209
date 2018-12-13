@@ -37,4 +37,5 @@ dependencies {
     implementation 'com.kofigyan.stateprogressbar:stateprogressbar:1.0.0'
     //Piccasso
     implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'org.jetbrains:annotations-java5:15.0'
 }

@@ -1,6 +1,7 @@
 package com.example.windows.fooddeliveryapp.home;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -21,7 +22,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.windows.fooddeliveryapp.LoginActivity;
 import com.example.windows.fooddeliveryapp.R;
+import com.example.windows.fooddeliveryapp.SplashScreen;
 import com.example.windows.fooddeliveryapp.adapter.SliderPagerAdapter;
 import com.example.windows.fooddeliveryapp.categories.MainMenuActivity;
 
@@ -33,6 +36,8 @@ import java.util.TimerTask;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static java.lang.Thread.sleep;
 
 public class HomeFragment extends Fragment {
 
@@ -58,6 +63,10 @@ public class HomeFragment extends Fragment {
     ArrayList<Integer> slider_image_list= new ArrayList<>();;
     int page_position = 0;
 
+    Handler handler;
+    Thread thread;
+    Boolean suspend=false;
+
     public static HomeFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -66,6 +75,18 @@ public class HomeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+    /*@Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(thread!=null)
+        {
+            thread.resume();
+            suspend=false;
+            initViewPager();
+        }
+
+    }*/
 
     @Nullable
     @Override
@@ -77,35 +98,42 @@ public class HomeFragment extends Fragment {
 
         initViewPager();
 
-        final Handler handler = new Handler();
+        /*handler = new Handler();
 
         //TODO : ViewPager Duration handler
-
-        final Runnable update = new Runnable() {
-            public void run() {
-                if (page_position == slider_image_list.size()) {
-                    page_position = 0;
-                } else {
-                    page_position = page_position + 1;
-                }
-                vp_slider.setCurrentItem(page_position, true);
-            }
-        };
-
-        new Timer().schedule(new TimerTask() {
-
+        thread=new Thread(new Runnable() {
             @Override
             public void run() {
-                handler.post(update);
-            }
-        }, 100, 5000);
+                try {
+                    if(!suspend)
+                    {
+                        sleep(5000);
+                        if (page_position == slider_image_list.size()) {
+                            page_position = 0;
+                        } else {
+                            page_position = page_position + 1;
+                        }
+                        vp_slider.setCurrentItem(page_position, true);
+                    }
+                    else
+                    {
+                        wait();
+                    }
 
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();*/
 
         flMainCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragment= MainMenuActivity.newInstance();
-                loadFragment(fragment);
+               Intent intent=new Intent(getActivity(),MainMenuActivity.class);
+               getActivity().finish();
+               startActivity(intent);
+
             }
         });
 
@@ -143,14 +171,6 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void loadFragment(Fragment fragment) {
-        getActivity()
-                .getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.framelayout_home,fragment)
-                .addToBackStack(null)
-                .commit();
-    }
 
     private void addBottomDots(int currentPage) {
         TextView[] dots = new TextView[slider_image_list.size()];
@@ -172,9 +192,16 @@ public class HomeFragment extends Fragment {
             dots[currentPage].setTextColor(Color.parseColor("#FFFFFF"));
     }
 
+    public boolean isSuspended()
+    {
+            suspend=true;
+            return  true;
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();
-        this.getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
+       // isSuspended();
+       // this.getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
     }
 }

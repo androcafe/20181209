@@ -53,6 +53,10 @@
 
     <string name="string_order_at">तारीख</string>
 
+    <!-- Past Order Fragment-->
+    <string name="string_past_order">मागील ऑर्डर</string>
+
+
     <!--Menu List-->
     <string name="string_add">ADD</string>
     <string name="string_add_sign">+</string>
@@ -62,4 +66,18 @@
     <!--Categories-->
     <string name="string_veg">शाकाहारी</string>
     <string name="string_non_veg">मांसाहारी</string>
+
+    <!--Admin order take-->
+    <string name="string_address">पत्ता</string>
+    <string name="string_confirm">ऑर्डर स्वीकारले</string>
+    <string name="string_cancel_order">ऑर्डर रद्द </string>
+    <string name="string_order_delivered">वितरित</string>
+    <string name="string_total">Total</string>
+
+    <string name="string_admin_take_order">Take Order Panel</string>
+
+
+    <string name="tab_new_order">नवीन ऑर्डर</string>
+    <string name="tab_cancel_order">रद्द ऑर्डर</string>
+    <string name="tab_past_order">मागील ऑर्डर</string>
 </resources>

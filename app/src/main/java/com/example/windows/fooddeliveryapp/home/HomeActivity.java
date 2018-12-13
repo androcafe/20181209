@@ -22,7 +22,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.windows.fooddeliveryapp.R;
+import com.example.windows.fooddeliveryapp.admin.AdminOrderActivity;
 import com.example.windows.fooddeliveryapp.order.OrderFragment;
+import com.example.windows.fooddeliveryapp.order.PastOrderFragement;
 
 import java.util.Locale;
 
@@ -49,6 +51,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle(getResources().getString(R.string.home_title));
 
         //Initializing Shared Preference
         sharedPreferences=getSharedPreferences(MyPref,Context.MODE_PRIVATE);
@@ -188,11 +191,16 @@ public class HomeActivity extends AppCompatActivity
              fragment= OrderFragment.newInstance();
              loadFragment(fragment);
 
-        } /*else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_past_order) {
+            fragment=PastOrderFragement.newInstance();
+            loadFragment(fragment);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_admin_order) {
+            Intent intent=new Intent(HomeActivity.this,AdminOrderActivity.class);
+            finish();
+            startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
+        } /*(else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 

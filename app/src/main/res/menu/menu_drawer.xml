@@ -37,5 +37,10 @@
         android:title="@string/nav_help_support"
         app:showAsAction="always"/>
 
+    <item
+        android:id="@+id/nav_admin_order"
+        android:title="Admin Order Panel"
+        app:showAsAction="always"/>
+
 
 </menu>

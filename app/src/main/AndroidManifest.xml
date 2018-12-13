@@ -7,9 +7,9 @@
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
+        android:requiresSmallestWidthDp="600"
         android:resizeable="true"
-        android:smallScreens="true"
-        android:requiresSmallestWidthDp="600"/>
+        android:smallScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +19,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,18 +32,21 @@
         <activity
             android:name=".LoginActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait"
-            />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".home.HomeActivity"
             android:configChanges="keyboardHidden|orientation|locale"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/home_title"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".categories.MainMenuActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:screenOrientation="portrait" />
+        <activity android:name=".admin.AdminOrderActivity"></activity>
     </application>
 
 </manifest>

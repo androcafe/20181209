@@ -67,6 +67,9 @@
 
     <string name="string_order_at">Ordered at</string>
 
+    <!-- Past Order Fragment-->
+    <string name="string_past_order">Past Order</string>
+
     <!--Menu List-->
     <string name="string_add">ADD</string>
     <string name="string_add_sign">+</string>
@@ -75,5 +78,17 @@
     <!--Categories-->
     <string name="string_veg">Veg</string>
     <string name="string_non_veg">Non Veg</string>
+
+    <!--Admin order take-->
+    <string name="string_address">Address</string>
+    <string name="string_confirm">Confirm Order</string>
+    <string name="string_cancel_order">Cancel Order</string>
+    <string name="string_order_delivered">Delivered</string>
+    <string name="string_total">Total</string>
+    <string name="string_admin_take_order">Take Order Panel</string>
+
+    <string name="tab_new_order">New Order</string>
+    <string name="tab_cancel_order">Canceled Order</string>
+    <string name="tab_past_order">Past Order</string>
 
 </resources>
