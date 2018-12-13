@@ -28,7 +28,6 @@ public class AdminOrderActivity extends AppCompatActivity implements TabLayout.O
     @BindView(R.id.pager)
     ViewPager viewPager;
 
-    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +60,7 @@ public class AdminOrderActivity extends AppCompatActivity implements TabLayout.O
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
+
         viewPager.setCurrentItem(tab.getPosition());
     }
 
@@ -110,6 +110,7 @@ public class AdminOrderActivity extends AppCompatActivity implements TabLayout.O
         public int getCount() {
             return tabCount;
         }
+
     }
 
     @Override

@@ -21,11 +21,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.windows.fooddeliveryapp.LoginActivity;
+import com.example.windows.fooddeliveryapp.OnBackPressed;
 import com.example.windows.fooddeliveryapp.R;
 import com.example.windows.fooddeliveryapp.SplashScreen;
 import com.example.windows.fooddeliveryapp.adapter.SliderPagerAdapter;
+import com.example.windows.fooddeliveryapp.cart.ViewCartActivity;
 import com.example.windows.fooddeliveryapp.categories.MainMenuActivity;
 
 import java.util.ArrayList;
@@ -39,12 +42,15 @@ import butterknife.Unbinder;
 
 import static java.lang.Thread.sleep;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnBackPressed{
 
     Unbinder unbinder;
 
     @BindView(R.id.fl_main_course)
     FrameLayout flMainCourse;
+
+    @BindView(R.id.tv_cart)
+    TextView tvCart;
 
     //Language Change
     Locale myLocale;
@@ -66,6 +72,7 @@ public class HomeFragment extends Fragment {
     Handler handler;
     Thread thread;
     Boolean suspend=false;
+
 
     public static HomeFragment newInstance() {
 
@@ -137,6 +144,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        tvCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), ViewCartActivity.class);
+                getActivity().finish();
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -198,6 +213,10 @@ public class HomeFragment extends Fragment {
             return  true;
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
     @Override
     public void onDetach() {
         super.onDetach();

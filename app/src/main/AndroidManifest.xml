@@ -41,7 +41,8 @@
             android:label="@string/home_title"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:noHistory="true"/>
         <activity
             android:name=".categories.MainMenuActivity"
             android:configChanges="keyboardHidden|orientation|locale"

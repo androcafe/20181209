@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.windows.fooddeliveryapp.LoginActivity;
+import com.example.windows.fooddeliveryapp.OnBackPressed;
 import com.example.windows.fooddeliveryapp.R;
 import com.example.windows.fooddeliveryapp.adapter.PastOrderAdapter;
 import com.example.windows.fooddeliveryapp.home.HomeActivity;
@@ -23,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class OrderFragment extends Fragment
+public class OrderFragment extends Fragment implements OnBackPressed
 {
 
     Unbinder unbinder;
@@ -104,5 +105,10 @@ public class OrderFragment extends Fragment
         rlPastOrder.setAdapter(pastOrderAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

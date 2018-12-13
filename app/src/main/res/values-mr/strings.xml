@@ -2,7 +2,7 @@
 <resources>
     <!--Fragment Sign In-->
     <string name="string_login">लॉगिन</string>
-    <string name="string_phone">ूरध्वनी क्रमांक</string>
+    <string name="string_phone">दूरध्वनी क्रमांक</string>
     <string name="string_password">पासवर्ड</string>
     <string name="string_sign_in">साइन इन</string>
     <string name="string_forgot_pw">तुमचा पासवर्ड विसरलात?</string>
@@ -28,7 +28,9 @@
     <string name="string_starter">स्टार्टर</string>
     <string name="string_main_course">स्टार्टर</string>
     <string name="string_roti_rice">स्टार्टर</string>
-    <string name="string_cold_drink">थंड पेय</string>थंड पेय
+    <string name="string_cold_drink">थंड पेय</string>
+    <string name="string_view_order">ऑर्डर पहा</string>
+
 
     <!-- Navigation Drawer -->
     <string name="nav_home">मुख्य पान</string>
@@ -56,12 +58,14 @@
     <!-- Past Order Fragment-->
     <string name="string_past_order">मागील ऑर्डर</string>
 
-
     <!--Menu List-->
     <string name="string_add">ADD</string>
     <string name="string_add_sign">+</string>
     <string name="string_sub_sign">-</string>
 
+    <string name="string_item_name">उपलब्ध आयटम</string>
+    <string name="string_item_price">किंमत</string>
+    <string name="string_item_qty">संख्या</string>
 
     <!--Categories-->
     <string name="string_veg">शाकाहारी</string>
@@ -82,7 +86,7 @@
     <string name="tab_past_order">मागील ऑर्डर</string>
 
     <!-- Cart-->
-    <string name="string_ur_delivery_details">ुमचे ऑर्डर स्टेटस</string>
+    <string name="string_ur_delivery_details">ऑर्डर स्टेटस</string>
 
     <string name="string_subtotal">किंमत</string>
     <string name="string_grand_total">एकूण किंमत</string>

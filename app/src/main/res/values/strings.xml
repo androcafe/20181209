@@ -53,6 +53,8 @@
     <string name="string_roti_rice">Roti Rice</string>
     <string name="string_cold_drink">Cold Drink</string>
 
+    <string name="string_view_order">View Order</string>
+
     <!--Order Fragment -->
     <string name="string_order">Order</string>
     <string name="string_order_no">Order No</string>
@@ -74,6 +76,10 @@
     <string name="string_add">ADD</string>
     <string name="string_add_sign">+</string>
     <string name="string_sub_sign">-</string>
+
+    <string name="string_item_name">ITEMS AVAILABLE</string>
+    <string name="string_item_price">PRICE</string>
+    <string name="string_item_qty">QTY</string>
 
     <!--Categories-->
     <string name="string_veg">Veg</string>

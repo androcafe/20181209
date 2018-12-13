@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
@@ -26,6 +27,7 @@ import com.example.windows.fooddeliveryapp.admin.AdminOrderActivity;
 import com.example.windows.fooddeliveryapp.order.OrderFragment;
 import com.example.windows.fooddeliveryapp.order.PastOrderFragement;
 
+import java.util.List;
 import java.util.Locale;
 
 import butterknife.ButterKnife;
@@ -45,13 +47,11 @@ public class HomeActivity extends AppCompatActivity
 
     SharedPreferences sharedPreferences;
 
+    boolean doubleBackToExitPressedOnce = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(getResources().getString(R.string.home_title));
 
         //Initializing Shared Preference
         sharedPreferences=getSharedPreferences(MyPref,Context.MODE_PRIVATE);
@@ -69,6 +69,12 @@ public class HomeActivity extends AppCompatActivity
         {
             showLanguageDialog();
         }
+
+        setContentView(R.layout.activity_home);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(getResources().getString(R.string.home_title));
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -135,7 +141,23 @@ public class HomeActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            tellFragments();
             super.onBackPressed();
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
         }
     }
 
@@ -239,6 +261,24 @@ public class HomeActivity extends AppCompatActivity
         }
 
     }
+
+
+    private void tellFragments() {
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+        for (Fragment f : fragments) {
+            if (f != null && f instanceof HomeFragment) {
+                ((HomeFragment) f).onBackPressed();
+            }
+            if (f != null && f instanceof PastOrderFragement) {
+                ((PastOrderFragement) f).onBackPressed();
+            }
+            if (f != null && f instanceof OrderFragment) {
+                ((OrderFragment) f).onBackPressed();
+            }
+
+        }
+    }
+
 
     public void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);

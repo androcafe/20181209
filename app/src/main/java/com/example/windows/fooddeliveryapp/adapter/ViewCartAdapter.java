@@ -3,6 +3,8 @@ package com.example.windows.fooddeliveryapp.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,8 @@ public class ViewCartAdapter extends RecyclerView.Adapter<ViewCartAdapter.MyView
 
     LayoutInflater inflater;
 
+    int qty=0;
+
     public ViewCartAdapter(ViewCartActivity viewCartActivity, ArrayList<ViewCart> arrayList) {
         context=viewCartActivity;
         this.arrayList=arrayList;
@@ -39,7 +43,7 @@ public class ViewCartAdapter extends RecyclerView.Adapter<ViewCartAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         holder.tvName.setText(arrayList.get(position).getItem_name());
         holder.tvSubTotal.setText(arrayList.get(position).getPrice());
         holder.tvQty.setText(arrayList.get(position).getQty());
@@ -47,10 +51,53 @@ public class ViewCartAdapter extends RecyclerView.Adapter<ViewCartAdapter.MyView
         {
             holder.ivItemType.setBackgroundResource(R.drawable.veg);
         }
-        else
+        if(arrayList.get(position).getItem_type().equals("nonveg"))
         {
             holder.ivItemType.setBackgroundResource(R.drawable.nonveg);
         }
+
+        holder.tvAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qty=Integer.parseInt(holder.tvQty.getText().toString())+1;
+                holder.tvQty.setText(""+qty);
+
+            }
+        });
+
+        holder.tvSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(holder.tvQty.getText().toString().equals("0"))
+                    qty=0;
+                else
+                    qty=Integer.parseInt(holder.tvQty.getText().toString())-1;
+
+                holder.tvQty.setText(""+qty);
+            }
+        });
+
+        holder.tvQty.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                 int res= Integer.parseInt(holder.tvQty.getText().toString())
+                         *Integer.parseInt(arrayList.get(position).getPrice());
+
+                holder.tvSubTotal.setText(""+res);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
     }
 
     @Override
@@ -72,6 +119,11 @@ public class ViewCartAdapter extends RecyclerView.Adapter<ViewCartAdapter.MyView
         @BindView(R.id.tv_subtotal)
         TextView tvSubTotal;
 
+        @BindView(R.id.tv_add)
+        TextView tvAdd;
+
+        @BindView(R.id.tv_sub)
+        TextView tvSub;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
